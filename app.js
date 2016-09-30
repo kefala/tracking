@@ -30,10 +30,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use('/api/', function (req, res, next) {
+  if (!req.user) res.send(403);
+  else next();
+});
+
 app.use('/', routes);
 app.use('/api', api);
 
-
+mongoose.Promise = global.Promise;
 mongoose.connect(uristring, function (err, res) {
   if (err) {
     console.log ('ERROR connecting to: ' + uristring + '. ' + err);
