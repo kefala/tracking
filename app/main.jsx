@@ -3,16 +3,22 @@ var $ = require('jquery');
 var React = require('react');
 var ReactDOM = require('react-dom');
 var ReactRouter = require('react-router');
+var Router = ReactRouter.Router;
+var Route = ReactRouter.Route;
+var BrowserHistory = ReactRouter.browserHistory;
 
 
-var Toolbar = require('./components/Toolbar.jsx');
+
+var HomePage = require('./Home/HomePage.jsx');
 var App = require('./app.jsx');
 
 
 ReactDOM.render(
-	<ReactRouter.Router history={ReactRouter.browserHistory}>
-    	<ReactRouter.Route path="/" component={App}>
-    		<ReactRouter.Route path="app" component={Toolbar}/>
-    	</ReactRouter.Route>
-    </ReactRouter.Router>
+	<Router history={BrowserHistory}>
+
+    	<Route path="/" component={App}>
+    		<Route path="app" component={HomePage}/>
+    	</Route>
+    
+    </Router>
 , document.getElementById('app'));
