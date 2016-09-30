@@ -10,6 +10,7 @@ var BrowserHistory = ReactRouter.browserHistory;
 
 
 var HomePage = require('./Home/HomePage.jsx');
+var TaskPage = require('./Task/TaskPage.jsx');
 var App = require('./app.jsx');
 
 
@@ -17,7 +18,8 @@ ReactDOM.render(
 	<Router history={BrowserHistory}>
 
     	<Route path="/" component={App}>
-    		<Route path="app" component={HomePage}/>
+    		<Route path="app" name="home" component={HomePage}/>
+    		<Route path="app/new" name="newTask" component={TaskPage}/>
     	</Route>
     
     </Router>
