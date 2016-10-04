@@ -8,7 +8,7 @@ var App = React.createClass({
     displayName: 'App',
     render: function (RouteHandler) {
     	return (
-    		<div className="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    	  <div className="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
     			<Toolbar/>
     			<Sidebar/>
     			<main className="mdl-layout__content">
