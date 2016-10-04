@@ -6,7 +6,7 @@ var Task = React.createClass({
         return (
             <li className="mdl-list__item mdl-list__item--two-line">
 			    <span className="mdl-list__item-primary-content">
-			      <span>{this.props.data}</span>
+			      <span>{this.props.task.name}</span>
 			      <span className="mdl-list__item-sub-title">00:00 / 00:30</span>
 			    </span>
 			    <span className="mdl-list__item-secondary-content">
